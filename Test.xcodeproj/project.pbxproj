@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AF7C9981B8772AD0001CA48 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AF7C9971B8772AD0001CA48 /* main.cpp */; };
+		1A9471591BA1B4F5001CB845 /* test_5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A9471571BA1B410001CB845 /* test_5.cpp */; };
+		1A95BB6B1BB0319A003989C4 /* 输入输出测试2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A95BB6A1BB0319A003989C4 /* 输入输出测试2.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +24,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A2BF4B01B89FA30008B6A58 /* TestHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHead.h; sourceTree = "<group>"; };
+		1A9471571BA1B410001CB845 /* test_5.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test_5.cpp; sourceTree = "<group>"; };
+		1A95BB6A1BB0319A003989C4 /* 输入输出测试2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "输入输出测试2.cpp"; sourceTree = "<group>"; };
 		1AF7C9941B8772AD0001CA48 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AF7C9971B8772AD0001CA48 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +60,9 @@
 		1AF7C9961B8772AD0001CA48 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				1AF7C9971B8772AD0001CA48 /* main.cpp */,
+				1A2BF4B01B89FA30008B6A58 /* TestHead.h */,
+				1A9471571BA1B410001CB845 /* test_5.cpp */,
+				1A95BB6A1BB0319A003989C4 /* 输入输出测试2.cpp */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -88,7 +93,7 @@
 		1AF7C98C1B8772AD0001CA48 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "肖镇龙";
 				TargetAttributes = {
 					1AF7C9931B8772AD0001CA48 = {
@@ -118,7 +123,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AF7C9981B8772AD0001CA48 /* main.cpp in Sources */,
+				1A95BB6B1BB0319A003989C4 /* 输入输出测试2.cpp in Sources */,
+				1A9471591BA1B4F5001CB845 /* test_5.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +151,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -235,6 +242,7 @@
 				1AF7C99D1B8772AD0001CA48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
