@@ -1,11 +1,11 @@
 //
-//  vectorå®¹å™¨.cpp
+//  vectorÈİÆ÷.cpp
 //  Test
 //
-//  Created by è‚–é•‡é¾™ on 15/9/16.
-//  Copyright (c) 2015å¹´ è‚–é•‡é¾™. All rights reserved.
+//  Created by Ğ¤ÕòÁú on 15/9/16.
+//  Copyright (c) 2015Äê Ğ¤ÕòÁú. All rights reserved.
 //
-//  ä½¿ç”¨vectorå®¹å™¨ï¼Œå®ç°æ•°æ®çš„åŠ¨æ€å¢åŠ å’Œåˆ é™¤ï¼Œå¹¶è¾“å‡ºä¸­é—´ç»“æœ
+//  Ê¹ÓÃvectorÈİÆ÷£¬ÊµÏÖÊı¾İµÄ¶¯Ì¬Ôö¼ÓºÍÉ¾³ı£¬²¢Êä³öÖĞ¼ä½á¹û
 
 #include <stdio.h>
 #include <iostream>
@@ -13,7 +13,7 @@
 using namespace std;
 void disp(vector<int>&v)
 {
-    for (int i = 0; i <= v.size(); i++)
+    for (unsigned int i = 0; i < v.size(); i++)  //v.size()ÊÇunsigned intÀàĞÍ
     {
         cout << v[i] <<  " ";
     }
@@ -26,10 +26,10 @@ int main()
     disp(vec);
     vec.insert(pVec, 3, 5);
     disp(vec);
-    vec.erase(pVec);
+	pVec = vec.erase(pVec);
     disp(vec);
-    pVec--;
-    vec.erase(pVec);
+    
+	pVec = vec.erase(pVec);
     disp(vec);
     return 0;
 }
