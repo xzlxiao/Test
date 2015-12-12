@@ -1,3 +1,5 @@
 # -*- coding: cp936 -*-
-# hello world 
-print 'hello world'
+'''
+Hello World
+'''
+print 'Hello World'
