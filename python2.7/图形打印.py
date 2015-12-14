@@ -17,3 +17,5 @@ print ' ' * left_margin + '| ' +       sentence      + ' |'
 print ' ' * left_margin + '| ' + ' ' * text_width    + ' |'
 print ' ' * left_margin + '+'  + '-' * (box_width-4) +  '+'
 print
+
+raw_input()

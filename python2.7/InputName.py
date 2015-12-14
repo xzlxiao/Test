@@ -2,3 +2,5 @@
 # ²âÊÔinputº¯Êı
 input_read = raw_input('ÇëÊäÈëÄãµÄÃû×Ö£º')
 print input_read
+
+raw_input()
