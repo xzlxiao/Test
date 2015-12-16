@@ -1,0 +1,12 @@
+# -*- coding: cp936 -*-
+# ×Öµä¸ñÊ½»¯×Ö·û´®
+phonebook = {
+    'Beth': '9102',
+    'Alice': '2341',
+    'Cecil': '3258'
+    }
+print phonebook
+
+print "Cecil's phone number is %(Cecil)s." % phonebook
+
+raw_input()
