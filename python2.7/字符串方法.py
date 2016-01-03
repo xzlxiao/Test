@@ -62,3 +62,35 @@ replace
 print '\n\nreplace方法'
 print 'This is a test'
 print 'This is a test'.replace('is', 'eez')
+
+
+##################################################
+'''
+split
+'''
+print '\n\nsplit'
+print '1=2=3=4=5=6=7'
+print '1=2=3=4=5=6=7'.split('=')
+
+##################################################
+'''
+strip 去除两边空格
+'''
+print '\n\nstrip'
+print '         internal whiterspace is kept        '
+print '         internal whiterspace is kept        '.strip()
+
+##################################################
+'''
+translate 可以替换字符串中的某些部分，只能处理单个字符，但有些时候比replace效率高得多
+'''
+
+print '\n\ntranslate'
+from string import maketrans
+table = maketrans('cs', 'kz')    # 这一函数可以将ASCII中的一些字符替换成另一些字符，并将ASCII赋给变量
+print len(table)
+print table[97:123]
+print maketrans('', '')[97:123]
+print 'this is an incredible test'
+print 'this is an incredible test'.translate(table)
+print 'this is an incredible test'.translate(table, ' ') # 第二个参数：删除指定字符
