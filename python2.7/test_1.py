@@ -30,3 +30,153 @@ def print_params_4(x, y, z = 3, *pospar, **keypar):
 	print x, y, z
 	print pospar
 	print keypar
+	
+# point2D类
+_metaclass_ = type
+class point2D:
+	def __init__(self):
+		self.x = 0
+		self.y = 0
+	
+	def setx(self, value):
+		self.x = value
+		
+	def sety(self, value):
+		self.y = value
+		
+	def getPoint(self):
+		return {'x': self.x, 'y': self.y}
+		
+# 类测试
+_metaclass_ = type
+class Person:
+
+	def setName(self, name):
+		self.name = name
+		
+	def getName(self):
+		return self.name
+		
+	def greet(self):
+		print "Hello, world! I'm. %s." % self.name
+		
+# 私有方法测试
+_metaclass_ = type
+class point3D(point2D):
+	def __init__(self):
+		point2D.__init__(self)
+		self.z = 12
+	def getPoint(self):
+		a = point2D.getPoint(self)
+		a['z'] = self.z
+		print a
+		
+# 异常处理
+def exp1():
+	try:
+		x = input('Enter the first number:')
+		y = input('Enter the second number:')
+		print x/y 
+	except ZeroDivisionError:
+		print 'The second number can\'t be zero!'
+	
+# 异常屏蔽开关机制
+_metaclass_ = type 
+class MuffledCalculator:
+	muffled = False
+	def calc(self, expr):
+		try: 
+			return eval(expr)
+		except ZeroDivisionError:
+			if self.muffled:
+				print 'Division by zero is illegal'
+			else:
+				raise 
+				
+# 捕捉异常
+def exp2():
+	try:
+		x = input('Enter the first number:')
+		y = input('Enter the second number:')
+		
+		print x/y
+	except(ZeroDivisionError, TypeError), e:
+		print e 
+		
+def exp3():
+	try:
+		x = input('Enter the first number:')
+		y = input('Enter the second number:')
+		
+		print x/y
+	except Exception, e:
+		print e 
+		
+def exp4():
+	try:
+		x = input('Enter the first number:')
+		y = input('Enter the second number:')
+		
+		print x/y
+	except e:
+		print e 
+		
+def exp5():
+	try:
+		x = input('Enter the first number:')
+		y = input('Enter the second number:')
+		
+		print x/y
+	except:
+		print 'Something wrong happened...'
+		
+def exp6():
+	try:
+		print 'A simple task'
+	except:
+		print 'What? Something went wrong?'
+	else:
+		print 'Ah... It went as planned.'
+		
+def exp7():
+	while True:
+		try:
+			x = input('Enter the first number:')
+			y = input('Enter the second number:')
+			value = x/y 
+			print 'x/y is ', value
+		except:
+			print 'Invalid input. Please try again.'
+		else:
+			break
+			
+def exp8():
+	while True:
+		try:
+			x = input('Enter the first number:')
+			y = input('Enter the second number:')
+			value = x/y 
+			print 'x/y is ', value
+		except Exception, e:
+			print 'Invalid input: ', e, '\n', 'Please try again.'
+		else:
+			break
+			
+# 调用超类的构造方法
+_metaclass_ = type
+class Bird:
+	def __init__(self):
+		self.hungry = True
+	def eat(self):
+		if self.hungry:
+			print 'Aaaah...'
+			self.hungry = False
+		else:
+			print 'No, thanks!'
+			
+class SongBird(Bird):
+	def __init__(self):
+		Bird.__init__(self)
+		self.sound = 'Squawk!'
+	def sing(self):
+		print self.sound
