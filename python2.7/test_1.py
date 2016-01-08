@@ -164,7 +164,7 @@ def exp8():
 			
 # 调用超类的构造方法
 _metaclass_ = type
-class Bird:
+class Bird(object):
 	def __init__(self):
 		self.hungry = True
 	def eat(self):
@@ -180,3 +180,43 @@ class SongBird(Bird):
 		self.sound = 'Squawk!'
 	def sing(self):
 		print self.sound
+
+_metaclass_ = type
+class SongBird2(Bird):
+	def __init__(self):
+		super(SongBird2, self).__init__()
+		self.sound = 'Squawk!'
+	def sing(self):
+		print self.sound
+		
+def checkIndex(key):
+	'''
+	所给的键是能接受的索引吗？
+	为了能被接受，键应该是一个非负的整数。如果它不是一个整数，会引发TypeError;如果
+	它是负数，则会引发IndexError
+	'''
+	if not isinstance(key, (int, long)):raise TypeError
+	if key < 0: raise IndexError
+	
+class ArithmeticSequence:
+	def __init__(self, start = 0, step = 1):
+		'''
+		初始化算术序列
+		
+		初始值——序列中的第一个值
+		步长——两个相邻值之间的差别
+		改变——用户修改的值得字典
+		'''
+		self.start = start
+		self.step = step 
+		self.changed = {} 
+		
+	def __getitem__(self, key):
+		checkIndex(key)
+		try: return self.changed[key]
+		except KeyError:
+			return self.start + key*self.step
+			
+	def __setitem__(self, key, value):
+		checkIndex(key)
+		self.changed[key] = value
