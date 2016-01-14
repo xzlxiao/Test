@@ -220,3 +220,33 @@ class ArithmeticSequence:
 	def __setitem__(self, key, value):
 		checkIndex(key)
 		self.changed[key] = value
+		
+class CounterList(list):
+	def __init__(self, *args):
+		super(CounterList, self).__init__(*args)
+		self.counter = 0
+	def __getitem__(self, index):
+		self.counter += 1
+		return super(CounterList, self).__getitem__(index)
+
+class Rectangle:
+	# 以元胞数组的方式赋值
+	def __init__(self):
+		self.width = 0
+		self.height = 0
+	def setSize(self, size):
+		self.width, self.height = size 
+	def getSize(self):
+		return self.width, self.height 
+		
+class Rectangle2:
+	# property函数
+	def __init__(self):
+		self.width = 0
+		self.height = 0
+	def setSize(self, size):
+		self.witdth, self.height = size 
+	def getSize(self):
+		return self.width, self.height 
+	size = property(getSize, setSize) 
+	
