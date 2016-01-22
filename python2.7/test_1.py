@@ -238,15 +238,27 @@ class Rectangle:
 		self.width, self.height = size 
 	def getSize(self):
 		return self.width, self.height 
-		
+
+_metaclass_ = type	
 class Rectangle2:
 	# property函数
 	def __init__(self):
 		self.width = 0
 		self.height = 0
 	def setSize(self, size):
-		self.witdth, self.height = size 
+		self.width, self.height = size 
 	def getSize(self):
 		return self.width, self.height 
 	size = property(getSize, setSize) 
 	
+class Rectange3:
+	# property函数的第二种形式
+	def __init__(self):
+		self.width = 0
+		self.height = 0
+	@property
+	def size(self):
+		return self.width, self.height 
+	@size.setter
+	def size(self, size):
+		self.width, self.height = size
